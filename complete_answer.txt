@@ -1,0 +1,54 @@
+QUESTION 6 - COMPLETE ANSWER
+
+Given connections:
+A-B, A-C, B-D, B-E, C-F, E-F
+
+The graph is undirected.
+
+(a) Representations
+Adjacency Matrix:
+    A B C D E F
+A : 0 1 1 0 0 0
+B : 1 0 0 1 1 0
+C : 1 0 0 0 0 1
+D : 0 1 0 0 0 0
+E : 0 1 0 0 0 1
+F : 0 0 1 0 1 0
+
+Adjacency List:
+A -> B C
+B -> A D E
+C -> A F
+D -> B
+E -> B F
+F -> C E
+
+BFS from A:
+A B C D E F
+
+DFS from A:
+A B D E F C
+
+(b) Search
+For sample target F, BFS-based graph search from A gives:
+- Matrix: 3 vertices examined; 18 matrix-position checks.
+- List: 3 vertices examined; 7 neighbour checks.
+
+Edge E-F:
+- Matrix: 1 direct lookup.
+- List: 2 neighbour checks.
+
+(c) Comparison
+Matrix:
+Space O(V^2), BFS O(V^2), DFS O(V^2), edge check O(1).
+
+List:
+Space O(V+E), BFS O(V+E), DFS O(V+E), edge check O(degree).
+
+Final conclusion:
+The given graph is sparse. The adjacency list stores only existing
+connections and therefore uses less space and supports BFS/DFS in
+O(V+E). The matrix is preferable when constant-time edge checking is
+the main requirement. For this sparse social network, the adjacency
+list is appropriate because storage and traversal efficiency are
+important.

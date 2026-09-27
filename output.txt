@@ -1,0 +1,43 @@
+SAMPLE INPUT
+F
+
+SAMPLE OUTPUT
+
+ADJACENCY MATRIX
+    A B C D E F
+A : 0 1 1 0 0 0
+B : 1 0 0 1 1 0
+C : 1 0 0 0 0 1
+D : 0 1 0 0 0 0
+E : 0 1 0 0 0 1
+F : 0 0 1 0 1 0
+
+ADJACENCY LIST
+A -> B C
+B -> A D E
+C -> A F
+D -> B
+E -> B F
+F -> C E
+
+TRAVERSALS STARTING FROM A
+BFS using Adjacency Matrix: A B C D E F
+BFS using Adjacency List  : A B C D E F
+DFS using Adjacency Matrix: A B D E F C
+DFS using Adjacency List  : A B D E F C
+
+Enter vertex to search from A (A-F): F
+
+SEARCH USING ADJACENCY MATRIX
+Vertex F found.
+Vertices examined: 3
+Matrix position checks: 18
+
+SEARCH USING ADJACENCY LIST
+Vertex F found.
+Vertices examined: 3
+Neighbour checks: 7
+
+EDGE CHECK: E-F
+Matrix: matrix[E][F] = 1 -> 1 direct lookup.
+List  : E's neighbours are B, F -> 2 neighbour checks.

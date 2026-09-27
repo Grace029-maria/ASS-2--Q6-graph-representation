@@ -1,0 +1,21 @@
+COMPARISON TABLE
+
+Feature                    Adjacency Matrix          Adjacency List
+---------------------------------------------------------------------------
+Space                      O(V^2)                    O(V + E)
+BFS                        O(V^2)                    O(V + E)
+DFS                        O(V^2)                    O(V + E)
+Edge checking              O(1)                      O(degree)
+Traversal behaviour        Scans all V positions     Follows stored neighbours
+Memory for this graph      36 matrix entries         12 neighbour entries
+Search of target F         18 position checks        7 neighbour checks
+Best suited for             Dense graphs /           Sparse graphs /
+                            frequent edge tests      graph traversal
+
+Execution result for F:
+- Matrix search: A, B, C examined; 18 matrix-position checks.
+- List search: A, B, C examined; 7 neighbour checks.
+
+Execution result for E-F:
+- Matrix: 1 direct lookup.
+- List: 2 neighbour checks.
